@@ -103,3 +103,16 @@ forge script script/Deployer.s.sol:Deployer --rpc-url $RPC_URL --optimize --broa
 
 The script uses the [Singleton Factory](https://eips.ethereum.org/EIPS/eip-2470) for the deployments which ensures that
 the addresses of the contracts are the same on all chains (so long as the chain is fully EVM equivalent).
+
+
+###INSTALLATION HALP
+
+Just in case you can't download your submodules, delete the lib folder and run the following commands:
+git submodule add https://github.com/brockelmore/forge-std lib/forge-std
+git submodule add https://github.com/marktoda/forge-gas-snapshot lib/forge-gas-snapshot
+git submodule add -b v4.9.5 https://github.com/OpenZeppelin/openzeppelin-contracts lib/openzeppelin-contracts
+git submodule add https://github.com/paulrberg/prb-test lib/prb-test
+git submodule add -b v2.0.4 https://github.com/gnosis/zodiac lib/zodiac
+git submodule add -b v1.3.0 https://github.com/safe-global/safe-contracts lib/safe-contracts
+git submodule add -b v4.8.0 https://github.com/openzeppelin/openzeppelin-contracts-upgradeable lib/openzeppelin-contracts-upgradeable
+git submodule add https://github.com/dmfxyz/murky lib/murky
