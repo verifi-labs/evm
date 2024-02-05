@@ -131,6 +131,17 @@ contract Deployer is Script {
             optimisticCompTimelockCompatibleExecutionStrategy
         );
 
+
+        (address vanillaExecutionStrategy, bool isNewVanillaExecutionStrategy) = noRedeploy(
+            deployer,
+            abi.encodePacked(type(VanillaExecutionStrategy).creationCode, abi.encode(address(0x1), 0)),
+            saltNonce
+        );
+
+        if (isNewVanillaExecutionStrategy) {
+            deployments.serialize("VanillaExecutionStrategyImplementation", vanillaExecutionStrategy);
+        }
+
         // ------- AUTHENTICATORS -------
 
         (address vanillaAuthenticator, ) = noRedeploy(deployer, type(VanillaAuthenticator).creationCode, saltNonce);
